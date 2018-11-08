@@ -3,14 +3,18 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import 'lib-flexible'
+import 'lib-flexible/flexible.js'
 import axios from 'axios'
-import { Button,Dialog,Toast,PullRefresh  } from 'vant'
+import { Button,Dialog,Toast,PullRefresh,Field,Cell,CellGroup,AddressEdit } from 'vant'
 
 Vue.use(Button)
-Vue.use(Dialog)
-Vue.use(Toast)
-Vue.use(PullRefresh)
+.use(Dialog)
+.use(Toast)
+.use(PullRefresh)
+.use(Field)
+.use(Cell)
+.use(CellGroup)
+.use(AddressEdit)
 // Vue.use()
 
 // import Vant from 'vant'
