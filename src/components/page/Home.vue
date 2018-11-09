@@ -20,7 +20,7 @@
                     <p>价格：{{ item.price }}</p>
                 </div>
                 <div class="btn">
-                    <button @click="$toast.success('购买成功，感谢您的支持')">购买</button>
+                    <button @click="$toast.success({message:'购买成功，感谢您的支持',duration:1000})">购买</button>
                 </div>
             </li>
         </ul>

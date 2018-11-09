@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import 'lib-flexible/flexible.js'
 import axios from 'axios'
-import { Button,Dialog,Toast,PullRefresh,Field,Cell,CellGroup,AddressEdit } from 'vant'
+import { Button,Dialog,Toast,PullRefresh,Field,Cell,CellGroup,Uploader,Icon } from 'vant'
 
 Vue.use(Button)
 .use(Dialog)
@@ -14,8 +14,8 @@ Vue.use(Button)
 .use(Field)
 .use(Cell)
 .use(CellGroup)
-.use(AddressEdit)
-// Vue.use()
+.use(Uploader)
+.use(Icon)
 
 // import Vant from 'vant'
 // import 'vant/lib/index.css'
