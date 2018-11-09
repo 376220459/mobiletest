@@ -1,5 +1,5 @@
 <template>
-    <div class="whole">
+    <div class="whole" id="whole">
         <div class="animation" id="animation">
             <img class="img" id="img" src="../../../static/back/login.jpg" alt="">
             <!-- <h1>你好，基佬</h1> -->
@@ -7,23 +7,44 @@
         <h1 style="font-family:Comic Sans MS">Books</h1>
         <div class="login-form">
             <form action="">
-                <div class="div"><div>账号：</div><input type="text"></div>
-                <div class="div"><div>密码：</div><input type="password"></div>
+                <div class="div"><div>账号：</div><input v-model="user" type="text"></div>
+                <div class="div"><div>密码：</div><input v-model="password" type="password"></div>
             </form>
             <button @click="toLogin">登陆</button>
-            <button @click="$toast.success('注册成功')">注册</button>
+            <button @click="register">注册</button>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'login',
+    name: 'Login',
+    data(){
+        return{
+            user: '',
+            password: ''
+        }
+    },
     methods: {
         toLogin(){
-            this.$router.push({
-                path: '/home'
+            this.$toast.fail('请先注册账号');
+            // this.$router.push({
+            //     path: '/home'
+            // })
+        },
+        register(){
+            this.user = 'admin',
+            this.password = 'admin',
+            this.$toast.loading({
+                message: '注册成功,正在登陆...',
+                mask: true,
+                duration: 2000
             })
+            setTimeout(() => {
+                this.$router.push({
+                    path: '/home'
+                })
+            }, 2000);
         }
     },
     mounted() {
